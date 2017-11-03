@@ -54,5 +54,11 @@ exports.calcIrms = function (samples, callback) {
     callback(irms);
 };
 
+// Closes the ADC port
+
+exports.close = function(callback) {
+
+    sensor.close(callback);
+}
 
 exports.options = options;
