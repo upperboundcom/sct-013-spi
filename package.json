@@ -1,0 +1,17 @@
+{
+  "name": "sct-013-spi",
+  "version": "0.0.1",
+  "description": "Nodejs module to read from the SCT-013 AC current sensor over SPI",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "sct-013"
+  ],
+  "author": "Adam Biener",
+  "license": "MIT",
+  "dependencies": {
+    "mcp-spi-adc": "^1.0.0"
+  }
+}
