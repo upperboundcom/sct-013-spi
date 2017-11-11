@@ -1,6 +1,7 @@
 var mcpadc = require('mcp-spi-adc');
 var sensor;
-var ICAL = 111.1;
+//var ICAL = 111.1;
+var ICAL = 60.60606;
 var offsetI = 512;
 var sumI;
 var options;
@@ -30,10 +31,10 @@ exports.calcIrms = function (samples, callback) {
 
         sensor.read(function(err, reading) {
 
-            var sampleI=reading.value;
+            var sampleI=reading.rawValue;
             // Digital low pass filter extracts the 2.5 V or 1.65 V dc offset,
             //  then subtract this - signal is now centered on 0 counts.
-            offsetI = (offsetI + (sampleI-offsetI)/1024);
+            offsetI = (offsetI + (sampleI-offsetI)/1023);
             filteredI = sampleI - offsetI;
 
             // Root-mean-square method current
@@ -45,7 +46,7 @@ exports.calcIrms = function (samples, callback) {
         });
     }
 
-    var I_RATIO = ICAL *((options.supplyVoltage/1000.0) / (1024));
+    var I_RATIO = ICAL *((options.supplyVoltage/1000.0) / (1023));
     irms = I_RATIO * Math.sqrt(sumI / samples);
 
     //Reset accumulators
