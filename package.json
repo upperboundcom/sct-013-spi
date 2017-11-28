@@ -1,6 +1,6 @@
 {
   "name": "sct-013-spi",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Nodejs module to read from the SCT-013 AC current sensor over SPI",
   "main": "index.js",
   "scripts": {
