@@ -2,7 +2,7 @@ var sct013 = require('./index.js');
 
 
 var options = {
-    supplyVoltage:3300,
+    supplyVoltage:3.3,
     speedHz:20000
     };
 

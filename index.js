@@ -46,7 +46,7 @@ exports.calcIrms = function (samples, callback) {
         });
     }
 
-    var I_RATIO = ICAL *((options.supplyVoltage/1000.0) / (1023));
+    var I_RATIO = ICAL *(options.supplyVoltage / (1023));
     irms = I_RATIO * Math.sqrt(sumI / samples);
 
     //Reset accumulators
